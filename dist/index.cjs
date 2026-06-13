@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("react/jsx-runtime"),s=()=>e.jsxs("div",{style:{padding:24,fontFamily:"system-ui, sans-serif"},children:[e.jsx("h1",{children:"公共组件库 — 开发环境"}),e.jsx("p",{children:"组件库已成功挂载，可在此页面调试和预览组件。"})]});exports.App=s;

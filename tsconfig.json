@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    /* ── 语言与输出 ──────────────────────────── */
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+
+    /* ── 严格性 ──────────────────────────────── */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* ── 互操作与模块 ────────────────────────── */
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+
+    /* ── 声明文件输出（供 build 脚本使用）────── */
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+
+    /* ── 路径别名 ────────────────────────────── */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
