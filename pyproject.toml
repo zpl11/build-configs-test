@@ -1,0 +1,116 @@
+# ============================================================
+# PEP 621 / PEP 517 Compliant Project Configuration
+# ============================================================
+# Build system: setuptools with PEP 517 build isolation
+# ============================================================
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# ------------------------------------------------------------
+# Project Metadata (PEP 621)
+# ------------------------------------------------------------
+[project]
+name = "container_image_scanner"
+version = "0.1.0"
+description = "A lightweight DevOps utility for auditing container image registries and performing remote vulnerability scans against OCI/Docker artifacts."
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">= 3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "DevSecOps Team", email = "devsecops@example.com"},
+]
+keywords = [
+    "devops",
+    "container",
+    "security-audit",
+    "vulnerability-scanning",
+    "oci",
+    "docker",
+    "registry",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: System :: Systems Administration",
+]
+
+# ------------------------------------------------------------
+# Runtime Dependencies
+# ------------------------------------------------------------
+dependencies = [
+    "httpx>=0.24.0",
+]
+
+# ------------------------------------------------------------
+# Optional Dependencies (extras)
+# ------------------------------------------------------------
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-asyncio>=0.21",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+]
+
+# ------------------------------------------------------------
+# CLI Entry Points
+# ------------------------------------------------------------
+[project.scripts]
+image-audit-cli = "container_image_scanner.scanner:main"
+
+# ------------------------------------------------------------
+# Project URLs
+# ------------------------------------------------------------
+[project.urls]
+Homepage = "https://github.com/example/container-image-scanner"
+Repository = "https://github.com/example/container-image-scanner"
+Issues = "https://github.com/example/container-image-scanner/issues"
+Documentation = "https://github.com/example/container-image-scanner#readme"
+
+# ------------------------------------------------------------
+# Setuptools Configuration (src-layout)
+# ------------------------------------------------------------
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# ------------------------------------------------------------
+# Pytest Configuration
+# ------------------------------------------------------------
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+# ------------------------------------------------------------
+# Coverage Configuration
+# ------------------------------------------------------------
+[tool.coverage.run]
+source = ["src/container_image_scanner"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 60
+
+# ------------------------------------------------------------
+# Ruff Linter (optional, for dev use)
+# ------------------------------------------------------------
+[tool.ruff]
+target-version = "py38"
+line-length = 100
