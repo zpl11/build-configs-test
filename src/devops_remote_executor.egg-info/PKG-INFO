@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: devops-remote-executor
+Version: 0.1.0
+Summary: DevOps core engine for large-scale infrastructure remote configuration management and asymmetric concurrent command execution.
+Home-page: UNKNOWN
+Author: DevOps Platform Team
+Author-email: devops@example.com
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3.8
+Provides-Extra: check
+
+UNKNOWN
+

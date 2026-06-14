@@ -1,0 +1,3 @@
+[console_scripts]
+remote-exec-cli = devops_remote_executor.ssh_client:main
+

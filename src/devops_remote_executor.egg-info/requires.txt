@@ -1,0 +1,4 @@
+paramiko>=3.0
+
+[check]
+mypy>=1.0

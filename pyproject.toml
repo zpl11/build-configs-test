@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "devops_remote_executor"
+version = "0.1.0"
+description = "DevOps core engine for large-scale infrastructure remote configuration management and asymmetric concurrent command execution."
+requires-python = ">=3.8"
+authors = [
+    { name = "DevOps Platform Team", email = "devops@example.com" },
+]
+license = { text = "MIT" }
+readme = "README.md"
+dependencies = [
+    "paramiko>=3.0",
+]
+
+[project.optional-dependencies]
+check = [
+    "mypy>=1.0",
+]
+
+[project.scripts]
+remote-exec-cli = "devops_remote_executor.ssh_client:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
