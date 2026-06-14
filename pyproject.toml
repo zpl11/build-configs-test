@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "devops_sys_monitor"
+version = "0.1.0"
+description = "A lightweight DevOps toolkit for server metrics collection and monitoring."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "DevOps Team", email = "devops@example.com" },
+]
+keywords = ["devops", "monitoring", "metrics", "sysadmin"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: System Administrators",
+    "Topic :: System :: Monitoring",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "psutil>=5.9.0",
+]
+
+[project.optional-dependencies]
+lint = ["flake8>=6.0"]
+
+[project.scripts]
+monitor-agent-cli = "devops_sys_monitor.collector:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
