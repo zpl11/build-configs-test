@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "container_image_scanner"
+version = "0.1.0"
+description = "A lightweight DevOps infrastructure tool for container image registry security auditing and remote vulnerability scanning."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "DevOps Security Team", email = "security@example.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: System Administrators",
+    "Topic :: Security",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "httpx",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest-cov",
+]
+
+[project.scripts]
+image-audit-cli = "container_image_scanner.scanner:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
