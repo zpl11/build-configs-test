@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "infra_ping_checker"
+version = "0.1.0"
+description = "High-concurrency DevOps infrastructure network topology liveness detection and asset health walk-through toolkit."
+authors = [
+    { name = "DevOps Team", email = "devops@example.com" },
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Networking :: Monitoring",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+infra-ping-cli = "infra_ping_checker.net_util:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
