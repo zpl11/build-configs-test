@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "devops_log_analyzer"
+version = "0.1.0"
+description = "Infrastructure-grade toolkit for DevOps log stream cleansing, unstructured text parsing, and performance metric extraction."
+authors = [
+    { name = "DevOps Team", email = "devops@example.com" },
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+bench = [
+    "pytest-benchmark>=4.0",
+]
+
+[project.scripts]
+log-parse-cli = "devops_log_analyzer.processor:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
