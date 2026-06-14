@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pipeline_yaml_parser"
+version = "0.1.0"
+description = "A DevOps CI/CD pipeline configuration static analysis and parsing tool"
+authors = [
+    { name = "DevOps Infra Team", email = "infra@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+dependencies = [
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.0",
+]
+
+[project.scripts]
+pipeline-lint-cli = "pipeline_yaml_parser.parser:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
