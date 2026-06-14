@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "infra_ping_checker"
+version = "0.1.0"
+description = "大规模 DevOps 基础设施网络拓扑存活状态并发检测与资产健康走查核心利器"
+readme = "README.md"
+requires-python = ">= 3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "InfraOps Team", email = "infraops@example.com" },
+]
+keywords = ["devops", "ping", "network", "health-check", "infrastructure"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: System Administrators",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Networking :: Monitoring",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+infra-ping-cli = "infra_ping_checker.net_util:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
